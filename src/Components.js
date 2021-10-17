@@ -16,10 +16,11 @@ import {
   Stack,
   Text,
   Heading,
+  Divider,
 } from "@chakra-ui/react";
 import { render } from "react-dom";
 
-import { CheckIcon } from '@chakra-ui/icons';
+import { CheckIcon, LockIcon } from '@chakra-ui/icons';
 
 export function Verify() {
   return (
@@ -58,36 +59,36 @@ export function BvnVerify() {
           <h2>
             <AccordionButton>
               <Box flex="1" textAlign="left">
-                Section 1 title
+               <LockIcon color='purple.600' boxSize={5} / > Why do we neeed your BVN
               </Box>
               <AccordionIcon />
             </AccordionButton>
           </h2>
-          <AccordionPanel color='var(--dark)' pb={4}>
+          <AccordionPanel pl='3em' className="txt" color='var(--dark)' pb={4}>
               <Text mb={5}>We only need your access to your</Text>
             <UnorderedList>
               <Stack direction='row' align='center' spacing={2}>
-              <CheckIcon/>
-              <ListItem> Lorem ipsum dolor sit amet</ListItem>
+              <CheckIcon color='#56F2C3'/>
+              <ListItem> Full Name</ListItem>
               </Stack>
               <Stack direction='row' align='center' spacing={2}>
-              <CheckIcon/>
-              <ListItem> Lorem ipsum dolor sit amet</ListItem>
+              <CheckIcon color='#56F2C3'/>
+              <ListItem> Phone Number</ListItem>
               </Stack>
               <Stack direction='row' align='center' spacing={2}>
-              <CheckIcon/>
-              <ListItem> Lorem ipsum dolor sit amet</ListItem>
+              <CheckIcon color='#56F2C3'/>
+              <ListItem> Date of Birth</ListItem>
               </Stack>
-              <Stack direction='row' align='center' spacing={2}>
-              <CheckIcon/>
-              <ListItem> Lorem ipsum dolor sit amet</ListItem>
-              </Stack>
-              <Stack direction='row' align='center' spacing={2}>
-              <CheckIcon/>
-              <ListItem> Lorem ipsum dolor sit amet</ListItem>
-              </Stack>
-                
+            
             </UnorderedList>
+
+            <Divider/>
+
+              <Stack direction='row' align='center' alignItems='center' spacing={2}>
+              <LockIcon color="orange"/>
+              <Text> Your BVN does not give us access to yur bank accounts or transaction </Text>
+              </Stack>
+
           </AccordionPanel>
         </AccordionItem>
       </Accordion>
