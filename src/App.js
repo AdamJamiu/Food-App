@@ -12,6 +12,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 // import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
+
 export default function App() {
   return (
     <ChakraProvider>
@@ -30,14 +31,14 @@ export default function App() {
             width="100%"
             borderBottom="1px solid #E9EEF4"
           >
-            <Link to="verifyBVN">
+            <Link transition="glide-right" to="verifyBVN">
             <Stack direction="row" align="center" spacing={4}>
               <Button colorScheme="blue">1</Button>
               <Text fontSize="xl">Verify Account</Text>
             </Stack>
             </Link>
 
-            <Link to="socialHandles">
+            <Link to="socialHandles" transition="glide-right">
             <Stack direction="row" align="center" spacing={4}>
               <Button colorScheme="blue">2</Button>
               <Text fontSize="xl">Social Handles</Text>
@@ -45,7 +46,7 @@ export default function App() {
             </Stack>
             </Link>
 
-            <Link to="BusinessCategory">
+            <Link to="BusinessCategory" transition="glide-right">
             <Stack direction="row" align="center" spacing={4}>
               <Button colorScheme="blue">3</Button>
               <Text fontSize="xl">Business Category</Text>
@@ -53,8 +54,6 @@ export default function App() {
             </Link>
             
           </Stack>
-
-
          
 
           <Switch> 

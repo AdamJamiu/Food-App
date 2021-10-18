@@ -23,6 +23,7 @@ import {
 
 import { CheckIcon, LockIcon } from "@chakra-ui/icons";
 
+
 export function Verify() {
   return (
     <Router>
@@ -80,7 +81,7 @@ export function BvnVerify() {
       </VStack>
 
       <Stack mt="40px">
-        <Accordion background="var(--grey)" padding="1em" mt="10px">
+        <Accordion background="var(--grey)" padding="1em" mt="10px"  defaultIndex={[0]} allowMultiple>
           <AccordionItem>
             <h2>
               <AccordionButton>
