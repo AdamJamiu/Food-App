@@ -50,6 +50,7 @@ export function Verify() {
           
         </Stack>
       </Stack>
+      
 
       {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
@@ -63,6 +64,9 @@ export function Verify() {
         </Route>
 
       </Switch>
+
+
+     
     </Router>
   );
 }
@@ -123,6 +127,12 @@ export function BvnVerify() {
           </AccordionItem>
         </Accordion>
       </Stack>
+
+       <Box align="right" mt={10}>
+            <Button colorScheme="blue">Continue</Button>
+          </Box>
+
+      
     </>
   );
 }
@@ -146,6 +156,10 @@ export function Bbank() {
         </Stack>
       </HStack>
       <Divider />
+
+      <Box align="right" mt={10}>
+            <Button colorScheme="blue">Continue</Button>
+          </Box>
     </>
   );
 }
@@ -153,9 +167,9 @@ export function Bbank() {
 
 export function SocialHandles() {
   return (
-    <Router>
+    <Router> 
       <Stack pt={5} mb={12}>
-        <Text color="var(--google-grey)">Step 1/3</Text>
+        <Text color="var(--google-grey)">Step 2/3</Text>
         <Heading size="lg" mt={4} pb="40px" color="var(--dark)">
           Social Handles
         </Heading>
@@ -168,29 +182,32 @@ export function SocialHandles() {
         </Stack>
       </Stack>
 
-      <Stack>
+
+      <VStack mb='30px' align='left' spacing={10}>
+      <VStack spacing={5} align='left'>
         <Text>Choose your Abeg Tag (required)</Text>
-        <Input></Input>
-      </Stack>
-
-      <VStack>
-        <Box>
-        <Text>Instagram</Text>
-        <Input></Input>
-        </Box>
-
-        <Box>
-        <Text>Twitter</Text>
-        <Input></Input>
-        </Box>
+        <Input placeholder="@" type='number' size='lg'></Input>
       </VStack>
 
+      <HStack spacing={25} align='left'>
+        <Stack>
+        <Text>Instagram</Text>
+        <Input placeholder="@" width="400px" size='lg'></Input>
+        </Stack>
+
+        <Stack>
+        <Text>Twitter</Text>
+        <Input placeholder="@" width="400px" size='lg'></Input>
+        </Stack>
+      </HStack>
+
+      </VStack>
 
       <Divider/>
 
-      <Stack>
+      <Box align='right' mt='20px'>
         <Button colorScheme='blue'>Confirm Social Handles</Button>
-      </Stack>
+      </Box>
 
       {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
@@ -198,4 +215,52 @@ export function SocialHandles() {
       
     </Router>
   );
+}
+
+
+export function BusinessCat () {
+  return (
+    <>
+     <Stack pt={5} mb={12}>
+        <Text color="var(--google-grey)">Step 1/3</Text>
+        <Heading size="lg" mt={4} pb="40px" color="var(--dark)">
+          Business Category
+        </Heading>
+
+        <HStack spacing={20}>
+         
+         <VStack  align="left"  spacing={5}>
+          <Text>Type of your Business</Text>
+          <Select size="lg" width="400px" placeholder="">
+          </Select>
+         </VStack>
+         <VStack  align="left" spacing={5}>
+          <Text>Type of your Business</Text>
+          <Select size="lg" width="400px" placeholder="">
+          </Select>
+         </VStack>
+                 
+        </HStack>
+
+        <Stack>
+          <Text as="h4" fontSize={12}>
+            Do you use POS machine for your business
+          </Text>
+          <Stack spacing={5} direction="row">
+
+              <Button background="var(--gray-bg)">Yes</Button>
+
+              <Button border="0.1px solid var(--google-gray)">
+                No
+              </Button>
+           
+          </Stack>
+          
+          <Box align='right'>
+            <Button colorScheme='blue'>Complete</Button>
+          </Box>
+        </Stack>
+      </Stack>
+    </>
+  )
 }

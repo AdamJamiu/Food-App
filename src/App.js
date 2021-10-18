@@ -7,7 +7,7 @@ import {
   Stack,
   Box,
 } from "@chakra-ui/react";
-import { Verify } from "./Components";
+import { SocialHandles, Verify, BusinessCat } from "./Components";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 // import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -30,39 +30,50 @@ export default function App() {
             width="100%"
             borderBottom="1px solid #E9EEF4"
           >
+            <Link to="verifyBVN">
             <Stack direction="row" align="center" spacing={4}>
               <Button colorScheme="blue">1</Button>
               <Text fontSize="xl">Verify Account</Text>
             </Stack>
+            </Link>
 
-            <Link>
+            <Link to="socialHandles">
             <Stack direction="row" align="center" spacing={4}>
               <Button colorScheme="blue">2</Button>
               <Text fontSize="xl">Social Handles</Text>
               
             </Stack>
             </Link>
+
+            <Link to="BusinessCategory">
             <Stack direction="row" align="center" spacing={4}>
               <Button colorScheme="blue">3</Button>
               <Text fontSize="xl">Business Category</Text>
             </Stack>
+            </Link>
+            
           </Stack>
 
-          <Verify />
 
-          <Box align="right" mt={10}>
-            <Button colorScheme="blue">Continue</Button>
-          </Box>
-        </Container>
+         
 
-        <Switch>
-          <Route path="/BVN">
-            {/* <BvnVerify /> */}
+          <Switch> 
+          
+          <Route exact path="/verifyBVN">
+            <Verify />
           </Route>
-          <Route path="/personal">
-            {/* <Bbank /> */}
+          <Route path="/socialHandles">
+            <SocialHandles />
+          </Route>
+          <Route path="/BusinessCategory">
+            <BusinessCat />
           </Route>
         </Switch>
+
+      
+        </Container>
+
+       
       </Router>
     </ChakraProvider>
   );
