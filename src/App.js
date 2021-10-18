@@ -56,10 +56,13 @@ export default function App() {
         </Container>
 
         <Switch>
-          <Route path="/BVN">
-            {/* <BvnVerify /> */}
+          <Route path="/verify acount">
+            <Verify />
           </Route>
-          <Route path="/personal">
+          <Route path="/social handles">
+            {/* <Bbank /> */}
+          </Route>
+          <Route path="/business category">
             {/* <Bbank /> */}
           </Route>
         </Switch>
