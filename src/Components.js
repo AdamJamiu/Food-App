@@ -14,7 +14,7 @@ import {
   Button,
   Select,
   VStack,
-  HStack,
+  // HStack,
   Redirect,
   Stack,
   Text,
@@ -24,6 +24,7 @@ import {
 } from "@chakra-ui/react";
 
 import { CheckIcon, LockIcon } from "@chakra-ui/icons";
+import { useToast } from "@chakra-ui/react"
 
 export function Verify() {
   return (
@@ -178,13 +179,13 @@ export function SocialHandles() {
   return (
     <Router>
       <Stack pt={5} mb={12}>
-        <Text color="var(--google-grey)">Step 2/3</Text>
+        <Text fontWeight='bold' color="var(--google-grey)">Step 2/3</Text>
         <Heading size="lg" mt={4} pb="40px" color="var(--dark)">
           Social Handles
         </Heading>
 
         <Stack>
-          <Text as="h4" fontSize={12}>
+          <Text as="h4" fontWeight='bold' fontSize={14}>
             Enter your business social media handles
           </Text>
         </Stack>
@@ -196,7 +197,7 @@ export function SocialHandles() {
           <Input placeholder="@" type="number" size="lg"></Input>
         </VStack>
 
-        <HStack spacing={25} align="left">
+        <Wrap spacing='30px' align="left">
           <Stack>
             <Text>Instagram</Text>
             <Input placeholder="@" width="400px" size="lg"></Input>
@@ -206,7 +207,7 @@ export function SocialHandles() {
             <Text>Twitter</Text>
             <Input placeholder="@" width="400px" size="lg"></Input>
           </Stack>
-        </HStack>
+        </Wrap>
       </VStack>
 
       <Divider />
@@ -222,10 +223,11 @@ export function SocialHandles() {
 }
 
 export function BusinessCat() {
+  const toast = useToast()
   return (
     <>
       <Stack pt={5} mb={12}>
-        <Text color="var(--google-grey)">Step 1/3</Text>
+        <Text color="var(--google-grey)">Step 3/3</Text>
         <Heading size="lg" mt={4} pb="40px" color="var(--dark)">
           Business Category
         </Heading>
@@ -252,7 +254,17 @@ export function BusinessCat() {
           </Stack>
 
           <Box align="right">
-            <Button colorScheme="blue">Complete</Button>
+            <Button 
+            onClick={() =>
+              toast({
+                title: "Account created.",
+                description: "We've created your account for you.",
+                status: "success",
+                duration: 5000,
+                isClosable: true
+              })
+            }
+            colorScheme="blue">Complete</Button>
           </Box>
         </Stack>
       </Stack>

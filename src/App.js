@@ -10,11 +10,15 @@ import {
 } from "@chakra-ui/react";
 import { SocialHandles, Verify, BusinessCat } from "./Components";
 import { BrowserRouter as Router, Route, Switch, Link, Redirect } from "react-router-dom";
+import './index.css';
 
 // import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 export default function App() {
+// const [state, setState] = useState(0);
+  
   return (
+
     <ChakraProvider>
       <Router>
         <Container  maxW="container.lg" pt={30} pb={30}>
@@ -31,21 +35,21 @@ export default function App() {
             width="100%"
             borderBottom="1px solid #E9EEF4"
           >
-            <Link transition="glide-right" to="verifyBVN">
+            <Link transition="glide-right" className="verify" to="verifyBVN">
               <Stack direction="row" align="center" spacing={4}>
                 <Button colorScheme="blue">1</Button>
                 <Text fontSize="md" fontWeight="bold">Verify Account</Text>
               </Stack>
             </Link>
 
-            <Link to="socialHandles" transition="glide-right">
+            <Link to="socialHandles" transition="glide-right" className="social">
               <Stack direction="row" align="center" spacing={4}>
                 <Button colorScheme="blue">2</Button>
                 <Text fontSize="md" fontWeight="bold">Social Handles</Text>
               </Stack>
             </Link>
 
-            <Link to="BusinessCategory" transition="glide-right">
+            <Link to="BusinessCategory" transition="glide-right" className="business">
               <Stack direction="row" align="center" spacing={4}>
                 <Button colorScheme="blue">3</Button>
                 <Text fontSize="md" fontWeight="bold">Business Category</Text>
