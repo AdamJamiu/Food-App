@@ -15,14 +15,15 @@ import {
   Select,
   VStack,
   HStack,
+  Redirect,
   Stack,
   Text,
   Heading,
   Divider,
+  Wrap,
 } from "@chakra-ui/react";
 
 import { CheckIcon, LockIcon } from "@chakra-ui/icons";
-
 
 export function Verify() {
   return (
@@ -48,10 +49,8 @@ export function Verify() {
               </Button>
             </Link>
           </Stack>
-          
         </Stack>
       </Stack>
-      
 
       {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
@@ -63,11 +62,7 @@ export function Verify() {
         <Route path="/personal">
           <Bbank />
         </Route>
-
       </Switch>
-
-
-     
     </Router>
   );
 }
@@ -81,7 +76,13 @@ export function BvnVerify() {
       </VStack>
 
       <Stack mt="40px">
-        <Accordion background="var(--grey)" padding="1em" mt="10px"  defaultIndex={[0]} allowMultiple>
+        <Accordion
+          background="var(--grey)"
+          padding="1em"
+          mt="10px"
+          defaultIndex={[0]}
+          allowMultiple
+        >
           <AccordionItem>
             <h2>
               <AccordionButton>
@@ -129,11 +130,11 @@ export function BvnVerify() {
         </Accordion>
       </Stack>
 
-       <Box align="right" mt={10}>
-            <Button colorScheme="blue">Continue</Button>
-          </Box>
-
-      
+      <Link to='socialHandles'>
+        <Box align="right" mt={10}>
+          <Button colorScheme="blue">Continue</Button>
+        </Box>
+      </Link>
     </>
   );
 }
@@ -141,7 +142,13 @@ export function BvnVerify() {
 export function Bbank() {
   return (
     <>
-      <HStack mb={10} align="center" padding="1em 0" spacing={20}>
+      <Wrap
+        spacing="30px"
+        mb={10}
+        alignItems="center"
+        padding="1em 0"
+        justifyContent="space-between"
+      >
         <Stack>
           <Text fontWeight="bold">Account Number</Text>
           <Input type="number" width="400px" size="lg" />
@@ -155,20 +162,21 @@ export function Bbank() {
             <option value="option3">Zenith Bank</option>
           </Select>
         </Stack>
-      </HStack>
+      </Wrap>
       <Divider />
 
-      <Box align="right" mt={10}>
-            <Button colorScheme="blue">Continue</Button>
-          </Box>
+      <Link>
+        <Box align="right" mt={10}>
+          <Button colorScheme="blue">Continue</Button>
+        </Box>
+      </Link>
     </>
   );
 }
 
-
 export function SocialHandles() {
   return (
-    <Router> 
+    <Router>
       <Stack pt={5} mb={12}>
         <Text color="var(--google-grey)">Step 2/3</Text>
         <Heading size="lg" mt={4} pb="40px" color="var(--dark)">
@@ -179,89 +187,92 @@ export function SocialHandles() {
           <Text as="h4" fontSize={12}>
             Enter your business social media handles
           </Text>
-         
         </Stack>
       </Stack>
 
+      <VStack mb="30px" align="left" spacing={10}>
+        <VStack spacing={5} align="left">
+          <Text>Choose your Abeg Tag (required)</Text>
+          <Input placeholder="@" type="number" size="lg"></Input>
+        </VStack>
 
-      <VStack mb='30px' align='left' spacing={10}>
-      <VStack spacing={5} align='left'>
-        <Text>Choose your Abeg Tag (required)</Text>
-        <Input placeholder="@" type='number' size='lg'></Input>
+        <HStack spacing={25} align="left">
+          <Stack>
+            <Text>Instagram</Text>
+            <Input placeholder="@" width="400px" size="lg"></Input>
+          </Stack>
+
+          <Stack>
+            <Text>Twitter</Text>
+            <Input placeholder="@" width="400px" size="lg"></Input>
+          </Stack>
+        </HStack>
       </VStack>
 
-      <HStack spacing={25} align='left'>
-        <Stack>
-        <Text>Instagram</Text>
-        <Input placeholder="@" width="400px" size='lg'></Input>
-        </Stack>
+      <Divider />
 
-        <Stack>
-        <Text>Twitter</Text>
-        <Input placeholder="@" width="400px" size='lg'></Input>
-        </Stack>
-      </HStack>
-
-      </VStack>
-
-      <Divider/>
-
-      <Box align='right' mt='20px'>
-        <Button colorScheme='blue'>Confirm Social Handles</Button>
+      <Box align="right" mt="20px">
+        <Button colorScheme="blue">Confirm Social Handles</Button>
       </Box>
 
       {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-
-      
     </Router>
   );
 }
 
-
-export function BusinessCat () {
+export function BusinessCat() {
   return (
     <>
-     <Stack pt={5} mb={12}>
+      <Stack pt={5} mb={12}>
         <Text color="var(--google-grey)">Step 1/3</Text>
         <Heading size="lg" mt={4} pb="40px" color="var(--dark)">
           Business Category
         </Heading>
 
-        <HStack spacing={20}>
-         
-         <VStack  align="left"  spacing={5}>
-          <Text>Type of your Business</Text>
-          <Select size="lg" width="400px" placeholder="">
-          </Select>
-         </VStack>
-         <VStack  align="left" spacing={5}>
-          <Text>Type of your Business</Text>
-          <Select size="lg" width="400px" placeholder="">
-          </Select>
-         </VStack>
-                 
-        </HStack>
+        <Wrap spacing={20}>
+          <VStack align="left" spacing={5}>
+            <Text>Type of your Business</Text>
+            <Select size="lg" width="400px" placeholder=""></Select>
+          </VStack>
+          <VStack align="left" spacing={5}>
+            <Text>Business Category</Text>
+            <Select size="lg" width="400px" placeholder=""></Select>
+          </VStack>
+        </Wrap>
 
         <Stack>
           <Text as="h4" fontSize={12}>
             Do you use POS machine for your business
           </Text>
           <Stack spacing={5} direction="row">
+            <Button background="var(--gray-bg)">Yes</Button>
 
-              <Button background="var(--gray-bg)">Yes</Button>
-
-              <Button border="0.1px solid var(--google-gray)">
-                No
-              </Button>
-           
+            <Button border="0.1px solid var(--google-gray)">No</Button>
           </Stack>
-          
-          <Box align='right'>
-            <Button colorScheme='blue'>Complete</Button>
+
+          <Box align="right">
+            <Button colorScheme="blue">Complete</Button>
           </Box>
         </Stack>
       </Stack>
     </>
-  )
+  );
 }
+
+<Router>
+<Switch>
+<Route exact path="/">
+  <Redirect to="/verifyBVN" />
+</Route>
+<Route path="/verifyBVN">
+  <Verify />
+</Route>
+<Route path="/socialHandles">
+  <SocialHandles />
+</Route>
+<Route path="/BusinessCategory">
+  <BusinessCat />
+</Route>
+</Switch>
+</Router>
