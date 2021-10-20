@@ -7,6 +7,7 @@ import {
   Stack,
   Box,
   Flex,
+  
 } from "@chakra-ui/react";
 import { SocialHandles, Verify, BusinessCat } from "./Components";
 import {
@@ -16,11 +17,12 @@ import {
   Link,
   Redirect,
 } from "react-router-dom";
-import { useToast } from "@chakra-ui/react";
 import "./index.css";
 
+
+
 export default function App() {
-  const toast = useToast()
+  
   return (
     <ChakraProvider>
       <Router>
@@ -63,7 +65,8 @@ export default function App() {
               </Stack>
           </Flex>
 
-          <Switch>
+        
+          <Switch >
             <Route exact path="/">
               <Redirect to="/verifyBVN" />
               <Verify />
@@ -84,27 +87,17 @@ export default function App() {
                 </Box>
               </Link>
             </Route>
+            
             <Route path="/BusinessCategory">
               <BusinessCat />
-              <Link to="socialHandles">
-                <Box align="right">
-            <Button 
-            onClick={() =>
-              toast({
-                title: "Account created.",
-                description: "We've created your account for you.",
-                status: "success",
-                duration: 5000,
-                isClosable: true
-              })
-            }
-            colorScheme="blue">Complete</Button>
-          </Box>
-              </Link>
+              
+               
             </Route>
           </Switch>
+
         </Container>
       </Router>
     </ChakraProvider>
   );
 }
+

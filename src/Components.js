@@ -20,10 +20,9 @@ import {
   Heading,
   Divider,
   Wrap,
+  useToast,
 } from "@chakra-ui/react";
-
 import { CheckIcon, LockIcon } from "@chakra-ui/icons";
-
 
 export function Verify() {
   return (
@@ -70,68 +69,71 @@ export function Verify() {
 export function BvnVerify() {
   return (
     <>
-    <Router>
-      <VStack spacing={5} align="left" pt={1}>
-        <Heading size="sm">Bank Verification Number (11-digits)</Heading>
-        <Input type="number" size="lg" />
-      </VStack>
+      <Router>
+        <VStack spacing={5} align="left" pt={1}>
+          <Heading size="sm">Bank Verification Number (11-digits)</Heading>
+          <Input type="number" size="lg" />
+        </VStack>
 
-      <Stack mt="40px">
-        <Accordion
-          background="var(--grey)"
-          padding="1em"
-          mt="10px"
-          defaultIndex={[0]}
-          allowMultiple
-        >
-          <AccordionItem>
-            <h2>
-              <AccordionButton>
-                <Box flex="1" textAlign="left">
-                  <LockIcon color="purple.600" boxSize={5} /> Why do we neeed
-                  your BVN
-                </Box>
-                <AccordionIcon />
-              </AccordionButton>
-            </h2>
-            <AccordionPanel pl="3em" className="txt" color="var(--dark)" pb={4}>
-              <Text mb={5}>We only need your access to your</Text>
-              <UnorderedList>
-                <Stack direction="row" align="center" spacing={2}>
-                  <CheckIcon color="#56F2C3" />
-                  <ListItem> Full Name</ListItem>
-                </Stack>
-                <Stack direction="row" align="center" spacing={2}>
-                  <CheckIcon color="#56F2C3" />
-                  <ListItem> Phone Number</ListItem>
-                </Stack>
-                <Stack direction="row" align="center" spacing={2}>
-                  <CheckIcon color="#56F2C3" />
-                  <ListItem> Date of Birth</ListItem>
-                </Stack>
-              </UnorderedList>
-
-              <Divider />
-
-              <Stack
-                direction="row"
-                align="center"
-                alignItems="center"
-                spacing={2}
+        <Stack mt="40px">
+          <Accordion
+            background="var(--grey)"
+            padding="1em"
+            mt="10px"
+            defaultIndex={[0]}
+            allowMultiple
+          >
+            <AccordionItem>
+              <h2>
+                <AccordionButton>
+                  <Box flex="1" textAlign="left">
+                    <LockIcon color="purple.600" boxSize={5} /> Why do we neeed
+                    your BVN
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+              </h2>
+              <AccordionPanel
+                pl="3em"
+                className="txt"
+                color="var(--dark)"
+                pb={4}
               >
-                <LockIcon color="orange" />
-                <Text>
-                  {" "}
-                  Your BVN does not give us access to your bank accounts or
-                  transaction{" "}
-                </Text>
-              </Stack>
-            </AccordionPanel>
-          </AccordionItem>
-        </Accordion>
-      </Stack>
+                <Text mb={5}>We only need your access to your</Text>
+                <UnorderedList>
+                  <Stack direction="row" align="center" spacing={2}>
+                    <CheckIcon color="#56F2C3" />
+                    <ListItem> Full Name</ListItem>
+                  </Stack>
+                  <Stack direction="row" align="center" spacing={2}>
+                    <CheckIcon color="#56F2C3" />
+                    <ListItem> Phone Number</ListItem>
+                  </Stack>
+                  <Stack direction="row" align="center" spacing={2}>
+                    <CheckIcon color="#56F2C3" />
+                    <ListItem> Date of Birth</ListItem>
+                  </Stack>
+                </UnorderedList>
 
-    
+                <Divider />
+
+                <Stack
+                  direction="row"
+                  align="center"
+                  alignItems="center"
+                  spacing={2}
+                >
+                  <LockIcon color="orange" />
+                  <Text>
+                    {" "}
+                    Your BVN does not give us access to your bank accounts or
+                    transaction{" "}
+                  </Text>
+                </Stack>
+              </AccordionPanel>
+            </AccordionItem>
+          </Accordion>
+        </Stack>
       </Router>
     </>
   );
@@ -162,8 +164,6 @@ export function Bbank() {
         </Stack>
       </Wrap>
       <Divider />
-
-      
     </>
   );
 }
@@ -172,13 +172,15 @@ export function SocialHandles() {
   return (
     <>
       <Stack pt={5} mb={12}>
-        <Text fontWeight='bold' color="var(--google-grey)">Step 2/3</Text>
+        <Text fontWeight="bold" color="var(--google-grey)">
+          Step 2/3
+        </Text>
         <Heading size="lg" mt={4} pb="40px" color="var(--dark)">
           Social Handles
         </Heading>
 
         <Stack>
-          <Text as="h4" fontWeight='bold' fontSize={14}>
+          <Text as="h4" fontWeight="bold" fontSize={14}>
             Enter your business social media handles
           </Text>
         </Stack>
@@ -190,7 +192,7 @@ export function SocialHandles() {
           <Input placeholder="@" type="number" size="lg"></Input>
         </VStack>
 
-        <Wrap spacing='30px' align="left">
+        <Wrap spacing="30px" align="left">
           <Stack>
             <Text>Instagram</Text>
             <Input placeholder="@" width="400px" size="lg"></Input>
@@ -204,14 +206,12 @@ export function SocialHandles() {
       </VStack>
 
       <Divider />
-
-     
     </>
   );
 }
 
 export function BusinessCat() {
- 
+  const toast = useToast()
   return (
     <>
       <Stack pt={5} mb={12}>
@@ -240,11 +240,25 @@ export function BusinessCat() {
 
             <Button border="0.1px solid var(--google-gray)">No</Button>
           </Stack>
-
-          
         </Stack>
       </Stack>
+
+      <Box align="right">
+        <Button
+          onClick={() =>
+            toast({
+              title: "Account created.",
+              description: "We've created your account for you.",
+              status: "success",
+              duration: 9000,
+              isClosable: true,
+            })
+          }
+          colorScheme="blue"
+        >
+          Complete
+        </Button>
+      </Box>
     </>
   );
 }
-
