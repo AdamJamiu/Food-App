@@ -15,7 +15,6 @@ import {
   Select,
   VStack,
   // HStack,
-  Redirect,
   Stack,
   Text,
   Heading,
@@ -24,7 +23,7 @@ import {
 } from "@chakra-ui/react";
 
 import { CheckIcon, LockIcon } from "@chakra-ui/icons";
-import { useToast } from "@chakra-ui/react"
+
 
 export function Verify() {
   return (
@@ -71,6 +70,7 @@ export function Verify() {
 export function BvnVerify() {
   return (
     <>
+    <Router>
       <VStack spacing={5} align="left" pt={1}>
         <Heading size="sm">Bank Verification Number (11-digits)</Heading>
         <Input type="number" size="lg" />
@@ -131,11 +131,8 @@ export function BvnVerify() {
         </Accordion>
       </Stack>
 
-      <Link to='socialHandles'>
-        <Box align="right" mt={10}>
-          <Button colorScheme="blue">Continue</Button>
-        </Box>
-      </Link>
+    
+      </Router>
     </>
   );
 }
@@ -166,18 +163,14 @@ export function Bbank() {
       </Wrap>
       <Divider />
 
-      <Link>
-        <Box align="right" mt={10}>
-          <Button colorScheme="blue">Continue</Button>
-        </Box>
-      </Link>
+      
     </>
   );
 }
 
 export function SocialHandles() {
   return (
-    <Router>
+    <>
       <Stack pt={5} mb={12}>
         <Text fontWeight='bold' color="var(--google-grey)">Step 2/3</Text>
         <Heading size="lg" mt={4} pb="40px" color="var(--dark)">
@@ -212,18 +205,13 @@ export function SocialHandles() {
 
       <Divider />
 
-      <Box align="right" mt="20px">
-        <Button colorScheme="blue">Confirm Social Handles</Button>
-      </Box>
-
-      {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-    </Router>
+     
+    </>
   );
 }
 
 export function BusinessCat() {
-  const toast = useToast()
+ 
   return (
     <>
       <Stack pt={5} mb={12}>
@@ -253,38 +241,10 @@ export function BusinessCat() {
             <Button border="0.1px solid var(--google-gray)">No</Button>
           </Stack>
 
-          <Box align="right">
-            <Button 
-            onClick={() =>
-              toast({
-                title: "Account created.",
-                description: "We've created your account for you.",
-                status: "success",
-                duration: 5000,
-                isClosable: true
-              })
-            }
-            colorScheme="blue">Complete</Button>
-          </Box>
+          
         </Stack>
       </Stack>
     </>
   );
 }
 
-<Router>
-<Switch>
-<Route exact path="/">
-  <Redirect to="/verifyBVN" />
-</Route>
-<Route path="/verifyBVN">
-  <Verify />
-</Route>
-<Route path="/socialHandles">
-  <SocialHandles />
-</Route>
-<Route path="/BusinessCategory">
-  <BusinessCat />
-</Route>
-</Switch>
-</Router>
