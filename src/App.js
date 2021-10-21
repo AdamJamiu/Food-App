@@ -71,6 +71,7 @@ export default function App() {
               <Redirect to="/verifyBVN" />
               <Verify />
             </Route>
+
             <Route path="/verifyBVN">
               <Verify />
               <Link to="socialHandles">
@@ -79,6 +80,7 @@ export default function App() {
                 </Box>
               </Link>
             </Route>
+            
             <Route path="/socialHandles">
               <SocialHandles />
               <Link to="BusinessCategory">

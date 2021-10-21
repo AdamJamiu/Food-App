@@ -24,10 +24,52 @@ import {
 } from "@chakra-ui/react";
 import { CheckIcon, LockIcon } from "@chakra-ui/icons";
 
+export function Mobilebtn() {
+  return (
+    <>
+      <Button color="blue">1</Button>
+    </>
+  );
+}
+
+export function SuccessBtn() {
+  return (
+    <>
+      <Button color="blue">
+        <CheckIcon />
+      </Button>
+    </>
+  );
+}
+
+export function ActiveLink() {
+  return (
+    <Stack direction="row" align="center" spacing={4}>
+      <Button colorScheme="blue">1</Button>
+      <Text fontSize="md" fontWeight="bold">
+        Verify Account
+      </Text>
+    </Stack>
+  );
+}
+
+
+export function VisitedLink () {
+    return (
+      <Stack direction="row" align="center" spacing={4}>
+        <Button color="blue">1</Button>
+        <Text color="#7D8DA7" fontSize="md" fontWeight="bold">
+          Verify Account
+        </Text>
+      </Stack>
+    );
+  
+}
+
 export function Verify() {
   return (
     <Router>
-      <Stack pt={5} mb={12}>
+      <Stack pt={10} mb={12}>
         <Text color="#7D8DA7">Step 1/3</Text>
         <Heading size="lg" mt={4} pb="40px" color="var(--dark)">
           Verify Account
@@ -134,6 +176,7 @@ export function BvnVerify() {
             </AccordionItem>
           </Accordion>
         </Stack>
+        <Divider mt="40px" mb="20px" />
       </Router>
     </>
   );
@@ -171,36 +214,34 @@ export function Bbank() {
 export function SocialHandles() {
   return (
     <>
-      <Stack pt={5} mb={12}>
-        <Text color="#7D8DA7">
-          Step 2/3
-        </Text>
+      <Stack pt={10} mb={12}>
+        <Text color="#7D8DA7">Step 2/3</Text>
         <Heading size="lg" pb="5px" pt="20px" color="var(--dark)">
           Social Handles
         </Heading>
 
         <Stack>
-          <Text  color="#7D8DA7" fontSize={16}>
+          <Text color="#7D8DA7" fontSize={16}>
             Enter your business social media handles
           </Text>
         </Stack>
       </Stack>
 
       <VStack mb="30px" align="left" spacing={10}>
-        <VStack spacing={5} align="left">
+        <VStack spacing={2} align="left">
           <Text fontWeight="bold">Choose your Abeg Tag (required)</Text>
-          <Input placeholder="@" type="number" size="lg"></Input>
+          <Input Width="400px" placeholder="@" type="number" size="lg"></Input>
         </VStack>
 
-        <Wrap spacing="30px" align="left">
+        <Wrap spacing="60px" align="left">
           <Stack>
             <Text fontWeight="bold">Instagram</Text>
-            <Input placeholder="@" maxWidth="390px" size="lg"></Input>
+            <Input placeholder="@" width="400px" size="lg"></Input>
           </Stack>
 
           <Stack>
             <Text fontWeight="bold">Twitter</Text>
-            <Input placeholder="@" Width="390px" size="lg"></Input>
+            <Input placeholder="@" Width="400px" size="lg"></Input>
           </Stack>
         </Wrap>
       </VStack>
@@ -211,29 +252,29 @@ export function SocialHandles() {
 }
 
 export function BusinessCat() {
-  const toast = useToast()
+  const toast = useToast();
   return (
     <>
-      <Stack pt={5} mb={12}>
+      <Stack pt={10} mb={12}>
         <Text color="#7D8DA7">Step 3/3</Text>
         <Heading size="lg" mt={4} pb="40px" color="var(--dark)">
           Business Category
         </Heading>
 
         <Wrap spacing={20}>
-          <VStack align="left" spacing={5}>
+          <VStack align="left" spacing={2}>
             <Text fontWeight="bold">Type of your Business</Text>
             <Select size="lg" width="400px" placeholder=""></Select>
           </VStack>
-          <VStack align="left" spacing={5}>
+          <VStack align="left" spacing={2}>
             <Text fontWeight="bold">Business Category</Text>
             <Select size="lg" width="400px" placeholder=""></Select>
           </VStack>
         </Wrap>
 
-        <Stack>
-          <Text as="h4"  fontWeight="bold" fontSize={12}>
-            Do you use POS machine for your business
+        <Stack pt="30px">
+          <Text as="h4" fontWeight="bold" fontSize={12}>
+            Do you use POS machine for your business?
           </Text>
           <Stack spacing={5} direction="row">
             <Button background="var(--gray-bg)">Yes</Button>
@@ -242,7 +283,7 @@ export function BusinessCat() {
           </Stack>
         </Stack>
       </Stack>
-    <Divider />
+      <Divider />
       <Box mt="20px" align="right">
         <Button
           onClick={() =>
