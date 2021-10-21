@@ -175,12 +175,12 @@ export function SocialHandles() {
         <Text color="#7D8DA7">
           Step 2/3
         </Text>
-        <Heading size="lg" mt={4} pb="20px" color="var(--dark)">
+        <Heading size="lg" pb="5px" pt="20px" color="var(--dark)">
           Social Handles
         </Heading>
 
         <Stack>
-          <Text fontWeight="bold" color="#7D8DA7" fontSize={16}>
+          <Text  color="#7D8DA7" fontSize={16}>
             Enter your business social media handles
           </Text>
         </Stack>
@@ -188,18 +188,18 @@ export function SocialHandles() {
 
       <VStack mb="30px" align="left" spacing={10}>
         <VStack spacing={5} align="left">
-          <Text>Choose your Abeg Tag (required)</Text>
+          <Text fontWeight="bold">Choose your Abeg Tag (required)</Text>
           <Input placeholder="@" type="number" size="lg"></Input>
         </VStack>
 
         <Wrap spacing="30px" align="left">
           <Stack>
-            <Text>Instagram</Text>
+            <Text fontWeight="bold">Instagram</Text>
             <Input placeholder="@" maxWidth="390px" size="lg"></Input>
           </Stack>
 
           <Stack>
-            <Text>Twitter</Text>
+            <Text fontWeight="bold">Twitter</Text>
             <Input placeholder="@" Width="390px" size="lg"></Input>
           </Stack>
         </Wrap>
@@ -222,17 +222,17 @@ export function BusinessCat() {
 
         <Wrap spacing={20}>
           <VStack align="left" spacing={5}>
-            <Text>Type of your Business</Text>
+            <Text fontWeight="bold">Type of your Business</Text>
             <Select size="lg" width="400px" placeholder=""></Select>
           </VStack>
           <VStack align="left" spacing={5}>
-            <Text>Business Category</Text>
+            <Text fontWeight="bold">Business Category</Text>
             <Select size="lg" width="400px" placeholder=""></Select>
           </VStack>
         </Wrap>
 
         <Stack>
-          <Text as="h4" fontSize={12}>
+          <Text as="h4"  fontWeight="bold" fontSize={12}>
             Do you use POS machine for your business
           </Text>
           <Stack spacing={5} direction="row">
@@ -242,8 +242,8 @@ export function BusinessCat() {
           </Stack>
         </Stack>
       </Stack>
-
-      <Box align="right">
+    <Divider />
+      <Box mt="20px" align="right">
         <Button
           onClick={() =>
             toast({
