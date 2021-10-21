@@ -4,12 +4,18 @@ import {
   Button,
   ChakraProvider,
   Text,
-  Stack,
+  
   Box,
   Flex,
-  
 } from "@chakra-ui/react";
-import { SocialHandles, Verify, BusinessCat } from "./Components";
+import {
+  SocialHandles,
+  ActiveLink,
+  UnVisitedLink,
+  Verify,
+  BusinessCat,
+  // VisitedLink,
+} from "./Components";
 import {
   BrowserRouter as Router,
   Route,
@@ -19,10 +25,7 @@ import {
 } from "react-router-dom";
 import "./index.css";
 
-
-
 export default function App() {
-  
   return (
     <ChakraProvider>
       <Router>
@@ -40,36 +43,27 @@ export default function App() {
             width="100%"
             borderBottom="1px solid #E9EEF4"
           >
-            <Link transition="glide-right" className="verify" to="verifyBVN">
-              <Stack direction="row" align="center" spacing={4}>
-                <Button colorScheme="blue">1</Button>
-                <Text fontSize="md" fontWeight="bold">
-                  Verify Account
-                </Text>
-              </Stack>
+            <Link className="verify" to="verifyBVN">
+              <ActiveLink
+                render={(data) => (
+                  <>
+                    <Button colorScheme="blue">1</Button>
+                    <Text fontSize="md" fontWeight="bold">
+                      Verify Account
+                    </Text>
+                  </>
+                )}
+              />
             </Link>
 
-            
-              <Stack direction="row" align="center" spacing={4}>
-                <Button colorScheme="blue">2</Button>
-                <Text fontSize="md" fontWeight="bold">
-                  Social Handles
-                </Text>
-              </Stack>
+            <UnVisitedLink name="Social Handles" value="2"/>
 
-              <Stack direction="row" align="center" spacing={4}>
-                <Button colorScheme="blue">3</Button>
-                <Text fontSize="md" fontWeight="bold">
-                  Business Category
-                </Text>
-              </Stack>
+            <UnVisitedLink name="Business Category" value="3"/>
           </Flex>
 
-        
-          <Switch >
+          <Switch>
             <Route exact path="/">
-              <Redirect to="/verifyBVN" />
-              <Verify />
+              <Redirect to="/verifyBVN" component={<Verify />} />
             </Route>
 
             <Route path="/verifyBVN">
@@ -80,7 +74,7 @@ export default function App() {
                 </Box>
               </Link>
             </Route>
-            
+
             <Route path="/socialHandles">
               <SocialHandles />
               <Link to="BusinessCategory">
@@ -89,17 +83,13 @@ export default function App() {
                 </Box>
               </Link>
             </Route>
-            
+
             <Route path="/BusinessCategory">
               <BusinessCat />
-              
-               
             </Route>
           </Switch>
-
         </Container>
       </Router>
     </ChakraProvider>
   );
 }
-

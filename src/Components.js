@@ -23,6 +23,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { CheckIcon, LockIcon } from "@chakra-ui/icons";
+import { Component } from "react";
 
 export function Mobilebtn() {
   return (
@@ -46,24 +47,43 @@ export function ActiveLink() {
   return (
     <Stack direction="row" align="center" spacing={4}>
       <Button colorScheme="blue">1</Button>
-      <Text fontSize="md" fontWeight="bold">
+      <Text color="#7D8DA7" fontSize="md" fontWeight="bold">
         Verify Account
       </Text>
     </Stack>
   );
 }
 
+export class VisitedLink extends Component  {
+  constructor(props) {
+    super(props);
+    this.state  = 0
+  }
+  
+  render() {
+  return (
+    <Stack direction="row" align="center" spacing={4}>
+      <Button color="blue">{this.props.value}</Button>
+      <Text color="#7D8DA7" fontSize="md" fontWeight="bold">
+        Verify Account
+      </Text>
+    </Stack>
+  );
+}
+}
 
-export function VisitedLink () {
+export class UnVisitedLink extends React.Component  {
+  render() {
+
     return (
       <Stack direction="row" align="center" spacing={4}>
-        <Button color="blue">1</Button>
+        <Button color="#A5B4CB">{this.props.value}</Button>
         <Text color="#7D8DA7" fontSize="md" fontWeight="bold">
-          Verify Account
+          {this.props.name}
         </Text>
       </Stack>
     );
-  
+  }
 }
 
 export function Verify() {
