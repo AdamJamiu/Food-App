@@ -28,13 +28,13 @@ export function Verify() {
   return (
     <Router>
       <Stack pt={5} mb={12}>
-        <Text color="var(--google-grey)">Step 1/3</Text>
+        <Text color="#7D8DA7">Step 1/3</Text>
         <Heading size="lg" mt={4} pb="40px" color="var(--dark)">
           Verify Account
         </Heading>
 
         <Stack>
-          <Text as="h4" fontSize={12}>
+          <Text as="h4" fontWeight="bold" fontSize={14}>
             Select a verification method
           </Text>
           <Stack spacing={5} direction="row">
@@ -172,15 +172,15 @@ export function SocialHandles() {
   return (
     <>
       <Stack pt={5} mb={12}>
-        <Text fontWeight="bold" color="var(--google-grey)">
+        <Text color="#7D8DA7">
           Step 2/3
         </Text>
-        <Heading size="lg" mt={4} pb="40px" color="var(--dark)">
+        <Heading size="lg" mt={4} pb="20px" color="var(--dark)">
           Social Handles
         </Heading>
 
         <Stack>
-          <Text as="h4" fontWeight="bold" fontSize={14}>
+          <Text fontWeight="bold" color="#7D8DA7" fontSize={16}>
             Enter your business social media handles
           </Text>
         </Stack>
@@ -195,12 +195,12 @@ export function SocialHandles() {
         <Wrap spacing="30px" align="left">
           <Stack>
             <Text>Instagram</Text>
-            <Input placeholder="@" width="400px" size="lg"></Input>
+            <Input placeholder="@" maxWidth="390px" size="lg"></Input>
           </Stack>
 
           <Stack>
             <Text>Twitter</Text>
-            <Input placeholder="@" width="400px" size="lg"></Input>
+            <Input placeholder="@" Width="390px" size="lg"></Input>
           </Stack>
         </Wrap>
       </VStack>
@@ -215,7 +215,7 @@ export function BusinessCat() {
   return (
     <>
       <Stack pt={5} mb={12}>
-        <Text color="var(--google-grey)">Step 3/3</Text>
+        <Text color="#7D8DA7">Step 3/3</Text>
         <Heading size="lg" mt={4} pb="40px" color="var(--dark)">
           Business Category
         </Heading>
