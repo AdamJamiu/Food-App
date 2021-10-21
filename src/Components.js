@@ -14,6 +14,7 @@ import {
   Button,
   Select,
   VStack,
+  // useMediaQuery,
   // HStack,
   Stack,
   Text,
@@ -23,7 +24,6 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { CheckIcon, LockIcon } from "@chakra-ui/icons";
-import { Component } from "react";
 
 export function Mobilebtn() {
   return (
@@ -54,27 +54,22 @@ export function ActiveLink() {
   );
 }
 
-export class VisitedLink extends Component  {
-  constructor(props) {
-    super(props);
-    this.state  = 0
+export class VisitedLink extends React.Component {
+
+  render() {
+    return (
+      <Stack direction="row" align="center" spacing={4}>
+        <Button color="blue">{this.props.value}</Button>
+        <Text color="#7D8DA7" fontSize="md" fontWeight="bold">
+          Verify Account
+        </Text>
+      </Stack>
+    );
   }
-  
-  render() {
-  return (
-    <Stack direction="row" align="center" spacing={4}>
-      <Button color="blue">{this.props.value}</Button>
-      <Text color="#7D8DA7" fontSize="md" fontWeight="bold">
-        Verify Account
-      </Text>
-    </Stack>
-  );
-}
 }
 
-export class UnVisitedLink extends React.Component  {
+export class UnVisitedLink extends React.Component {
   render() {
-
     return (
       <Stack direction="row" align="center" spacing={4}>
         <Button color="#A5B4CB">{this.props.value}</Button>
@@ -138,13 +133,7 @@ export function BvnVerify() {
         </VStack>
 
         <Stack mt="40px">
-          <Accordion
-            background="var(--grey)"
-            padding="1em"
-            mt="10px"
-            
-            
-          >
+          <Accordion background="var(--grey)" padding="1em" mt="10px">
             <AccordionItem>
               <h2>
                 <AccordionButton>

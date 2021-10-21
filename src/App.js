@@ -3,10 +3,8 @@ import {
   Container,
   Button,
   ChakraProvider,
-  Text,
-  
   Box,
-  Flex,
+  Wrap,
 } from "@chakra-ui/react";
 import {
   SocialHandles,
@@ -35,31 +33,22 @@ export default function App() {
               Logout
             </Button>
           </Box>
-          <Flex
+          <Wrap
             pb="4"
-            justifyContent={"space-between"}
+            spacing={20}
             direction="row"
             alignItems="center"
             width="100%"
             borderBottom="1px solid #E9EEF4"
           >
             <Link className="verify" to="verifyBVN">
-              <ActiveLink
-                render={(data) => (
-                  <>
-                    <Button colorScheme="blue">1</Button>
-                    <Text fontSize="md" fontWeight="bold">
-                      Verify Account
-                    </Text>
-                  </>
-                )}
-              />
+              <ActiveLink name="Verify Button" value="1"/>
             </Link>
 
             <UnVisitedLink name="Social Handles" value="2"/>
 
             <UnVisitedLink name="Business Category" value="3"/>
-          </Flex>
+          </Wrap>
 
           <Switch>
             <Route exact path="/">
