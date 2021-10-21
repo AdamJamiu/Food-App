@@ -5,6 +5,7 @@ import {
   ChakraProvider,
   Box,
   Wrap,
+  // useMediaQuery
 } from "@chakra-ui/react";
 import {
   SocialHandles,
@@ -12,6 +13,7 @@ import {
   UnVisitedLink,
   Verify,
   BusinessCat,
+  // MobileButton,
   // VisitedLink,
 } from "./Components";
 import {
@@ -22,6 +24,19 @@ import {
   Redirect,
 } from "react-router-dom";
 import "./index.css";
+
+
+// function MobileBtn () {
+//   const [mobileView] = useMediaQuery([
+//     "(max-width: 600px)"
+//   ])
+
+//   if(mobileView){
+//     <MobileButton />
+//   }else{
+
+//   }
+// }
 
 export default function App() {
   return (
@@ -42,12 +57,12 @@ export default function App() {
             borderBottom="1px solid #E9EEF4"
           >
             <Link className="verify" to="verifyBVN">
-              <ActiveLink name="Verify Button" value="1"/>
+              <ActiveLink  name="Verify Account" value="1"/>
             </Link>
 
-            <UnVisitedLink name="Social Handles" value="2"/>
+            <UnVisitedLink className="social" name="Social Handles" value="2"/>
 
-            <UnVisitedLink name="Business Category" value="3"/>
+            <UnVisitedLink className="business" name="Business Category" value="3"/>
           </Wrap>
 
           <Switch>

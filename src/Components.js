@@ -25,7 +25,8 @@ import {
 } from "@chakra-ui/react";
 import { CheckIcon, LockIcon } from "@chakra-ui/icons";
 
-export function Mobilebtn() {
+
+export function MobileButton() {
   return (
     <>
       <Button color="blue">1</Button>
@@ -43,15 +44,18 @@ export function SuccessBtn() {
   );
 }
 
-export function ActiveLink() {
-  return (
-    <Stack direction="row" align="center" spacing={4}>
-      <Button colorScheme="blue">1</Button>
-      <Text color="#7D8DA7" fontSize="md" fontWeight="bold">
-        Verify Account
-      </Text>
-    </Stack>
-  );
+export class ActiveLink extends React.Component {
+  render() {
+
+    return (
+      <Stack direction="row" align="center" spacing={4}>
+        <Button colorScheme="blue">{this.props.value}</Button>
+        <Text color="#7D8DA7" fontSize="md" fontWeight="bold">
+          {this.props.name}
+        </Text>
+      </Stack>
+    );
+  }
 }
 
 export class VisitedLink extends React.Component {
@@ -71,7 +75,7 @@ export class VisitedLink extends React.Component {
 export class UnVisitedLink extends React.Component {
   render() {
     return (
-      <Stack direction="row" align="center" spacing={4}>
+      <Stack className="social" direction="row" align="center" spacing={4}>
         <Button color="#A5B4CB">{this.props.value}</Button>
         <Text color="#7D8DA7" fontSize="md" fontWeight="bold">
           {this.props.name}
@@ -91,16 +95,16 @@ export function Verify() {
         </Heading>
 
         <Stack>
-          <Text as="h4" fontWeight="bold" fontSize={14}>
+          <Text fontWeight="bold" fontSize={14}>
             Select a verification method
           </Text>
           <Stack spacing={5} direction="row">
             <Link to="BVN">
-              <Button background="var(--gray-bg)">BVN</Button>
+              <Button fontSize={14} background="var(--gray-bg)">BVN</Button>
             </Link>
 
             <Link to="personal">
-              <Button border="0.1px solid var(--google-gray)">
+              <Button fontSize={14} border="0.1px solid var(--google-gray)">
                 Personal Account Number
               </Button>
             </Link>
@@ -238,18 +242,18 @@ export function SocialHandles() {
 
       <VStack mb="30px" align="left" spacing={10}>
         <VStack spacing={2} align="left">
-          <Text fontWeight="bold">Choose your Abeg Tag (required)</Text>
+          <Text fontSize={14} fontWeight="bold">Choose your Abeg Tag (required)</Text>
           <Input Width="400px" placeholder="@" type="number" size="lg"></Input>
         </VStack>
 
         <Wrap spacing="60px" align="left">
           <Stack>
-            <Text fontWeight="bold">Instagram</Text>
+            <Text fontSize={14} fontWeight="bold">Instagram</Text>
             <Input placeholder="@" width="400px" size="lg"></Input>
           </Stack>
 
           <Stack>
-            <Text fontWeight="bold">Twitter</Text>
+            <Text fontSize={14} fontWeight="bold">Twitter</Text>
             <Input placeholder="@" Width="400px" size="lg"></Input>
           </Stack>
         </Wrap>
@@ -272,11 +276,11 @@ export function BusinessCat() {
 
         <Wrap spacing={20}>
           <VStack align="left" spacing={2}>
-            <Text fontWeight="bold">Type of your Business</Text>
+            <Text fontSize={14} fontWeight="bold">Type of your Business</Text>
             <Select size="lg" width="400px" placeholder=""></Select>
           </VStack>
           <VStack align="left" spacing={2}>
-            <Text fontWeight="bold">Business Category</Text>
+            <Text fontSize={14} fontWeight="bold">Business Category</Text>
             <Select size="lg" width="400px" placeholder=""></Select>
           </VStack>
         </Wrap>
