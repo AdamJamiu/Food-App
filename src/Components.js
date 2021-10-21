@@ -63,7 +63,7 @@ export class VisitedLink extends React.Component {
   render() {
     return (
       <Stack direction="row" align="center" spacing={4}>
-        <Button color="blue">{this.props.value}</Button>
+        <Button _hover={{ bg: "none" }} color="blue"><CheckIcon /> </Button>
         <Text color="#7D8DA7" fontSize="md" fontWeight="bold">
           Verify Account
         </Text>
@@ -76,7 +76,7 @@ export class UnVisitedLink extends React.Component {
   render() {
     return (
       <Stack className="social" direction="row" align="center" spacing={4}>
-        <Button color="#A5B4CB">{this.props.value}</Button>
+        <Button cursor="auto" _hover={{ bg: "#EDF2F7" }} color="#A5B4CB">{this.props.value}</Button>
         <Text color="#7D8DA7" fontSize="md" fontWeight="bold">
           {this.props.name}
         </Text>
