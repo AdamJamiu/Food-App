@@ -63,7 +63,9 @@ export default function App() {
 
           <Switch>
             <Route exact path="/">
-              <Redirect to="/verifyBVN" component={<Verify />} />
+              <Redirect to="/verifyBVN" >
+              <Verify />
+              </Redirect>
             </Route>
 
             <Route path="/verifyBVN">
@@ -77,6 +79,7 @@ export default function App() {
 
             <Route path="/socialHandles">
               <SocialHandles />
+              
               <Link to="BusinessCategory">
                 <Box align="right" mt="20px">
                   <Button colorScheme="blue">Confirm Social Handles</Button>

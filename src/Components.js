@@ -142,8 +142,8 @@ export function BvnVerify() {
             background="var(--grey)"
             padding="1em"
             mt="10px"
-            defaultIndex={[0]}
-            allowMultiple
+            
+            
           >
             <AccordionItem>
               <h2>
