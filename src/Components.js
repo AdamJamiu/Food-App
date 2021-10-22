@@ -211,8 +211,8 @@ export function Bbank() {
         </Stack>
 
         <Stack>
-          <Text fontWeight="bold">Select Bank</Text>
-          <Select size="lg" width="400px" placeholder="Select Bank">
+          <Text fontSize={15} fontWeight="bold">Select Bank</Text>
+          <Select size="lg" fontSize={15} width="400px" placeholder="Select Bank">
             <option value="option1">First Bank</option>
             <option value="option2">GTBank</option>
             <option value="option3">Zenith Bank</option>
@@ -275,13 +275,13 @@ export function BusinessCat() {
         </Heading>
 
         <Wrap spacing={20}>
-          <VStack align="left" spacing={2}>
+          <VStack align="left" width="100%" spacing={2}>
             <Text fontSize={14} fontWeight="bold">Type of your Business</Text>
-            <Select size="lg" width="400px" placeholder=""></Select>
+            <Select size="lg" width="100%" placeholder=""></Select>
           </VStack>
-          <VStack align="left" spacing={2}>
+          <VStack align="left" width="100%" spacing={2}>
             <Text fontSize={14} fontWeight="bold">Business Category</Text>
-            <Select size="lg" width="400px" placeholder=""></Select>
+            <Select size="lg" width="100%" placeholder=""></Select>
           </VStack>
         </Wrap>
 
