@@ -15,7 +15,7 @@ import {
   Select,
   VStack,
   // useMediaQuery,
-  // HStack,
+  HStack,
   Stack,
   Text,
   Heading,
@@ -246,17 +246,17 @@ export function SocialHandles() {
           <Input Width="400px" placeholder="@" type="number" size="lg"></Input>
         </VStack>
 
-        <Wrap spacing="60px" align="left">
-          <Stack>
+        <HStack spacing="60px" align="left">
+          <Stack width="100%">
             <Text fontSize={14} fontWeight="bold">Instagram</Text>
-            <Input placeholder="@" width="400px" size="lg"></Input>
+            <Input placeholder="@" size="lg"></Input>
           </Stack>
 
-          <Stack>
+          <Stack width="100%">
             <Text fontSize={14} fontWeight="bold">Twitter</Text>
-            <Input placeholder="@" Width="400px" size="lg"></Input>
+            <Input placeholder="@"  size="lg"></Input>
           </Stack>
-        </Wrap>
+        </HStack>
       </VStack>
 
       <Divider />
