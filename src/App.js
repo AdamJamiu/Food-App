@@ -4,6 +4,7 @@ import {
   Button,
   ChakraProvider,
   Box,
+  ColorModeScript,
   Wrap,
   // useMediaQuery
 } from "@chakra-ui/react";
@@ -38,9 +39,19 @@ import "./index.css";
 //   }
 // }
 
+const config = {
+  initialColorMode: "light",
+  useSystemColorMode: true,
+}
+
+
+
 export default function App() {
   return (
+    <>
+    <ColorModeScript initialColorMode={config.initialColorMode} />
     <ChakraProvider>
+
       <Router>
         <Container maxW="container.lg" pt={30} pb={30}>
           <Box textAlign="right" mb="8">
@@ -57,18 +68,18 @@ export default function App() {
             borderBottom="1px solid #E9EEF4"
           >
             <Link className="verify" to="verifyBVN">
-              <ActiveLink  name="Verify Account" value="1"/>
+              <ActiveLink name="Verify Account" value="1" />
             </Link>
 
-            <UnVisitedLink className="social" name="Social Handles" value="2"/>
+            <UnVisitedLink className="social" name="Social Handles" value="2" />
 
-            <UnVisitedLink className="business" name="Business Category" value="3"/>
+            <UnVisitedLink className="business" name="Business Category" value="3" />
           </Wrap>
 
           <Switch>
             <Route exact path="/">
-              <Redirect to="/verifyBVN" >
-              <Verify />
+              <Redirect to="/verifyBVN">
+                <Verify />
               </Redirect>
             </Route>
 
@@ -83,7 +94,7 @@ export default function App() {
 
             <Route path="/socialHandles">
               <SocialHandles />
-              
+
               <Link to="BusinessCategory">
                 <Box align="right" mt="20px">
                   <Button colorScheme="blue">Confirm Social Handles</Button>
@@ -98,5 +109,6 @@ export default function App() {
         </Container>
       </Router>
     </ChakraProvider>
+    </>
   );
 }
